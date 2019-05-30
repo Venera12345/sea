@@ -4,7 +4,6 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 const del = require('del');
-const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 
@@ -35,7 +34,7 @@ function styles () {
     }))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./build/css/'))
-    .pipe(browserSync.stream());
+
 
 }
 
@@ -47,7 +46,6 @@ function scripts () {
         toplevel: true
     }))
     .pipe(gulp.dest('./build/js/'))
-    .pipe(browserSync.stream());
 }
 
 function clean() {
@@ -55,15 +53,9 @@ function clean() {
  }
 
 function watch() {
-    browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    });
     gulp.watch('./src/css/*.css', styles)
     gulp.watch('./src/css/*.scss', styles)
     gulp.watch('./src/js/*.js', scripts)
-    gulp.watch("./*.html").on('change', browserSync.reload);
 }
 
 gulp.task('styles', styles);

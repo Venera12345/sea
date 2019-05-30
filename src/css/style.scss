@@ -24,25 +24,25 @@
 
 @font-face {
   font-family: 'RobotoSlab';
-  src: url('../font/robotoslab/RobotoSlab-Bold.ttf');
+  src: url('../../dist/font/robotoslab/RobotoSlab-Bold.ttf');
   font-weight: 700;
 }
 
 @font-face {
   font-family: 'RobotoSlab';
-  src: url('/../../src/font/robotoslab/RobotoSlab-Regular.ttf');
+  src: url('../../dist/font/robotoslab/RobotoSlab-Regular.ttf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url('/../../src/font/raleway/Raleway-Bold.ttf');
+  src: url('../../dist/font/raleway/Raleway-Bold.ttf');
   font-weight: 700;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url('/../../src/font/raleway/Raleway-Regular.ttf');
+  src: url('../../dist/font/raleway/Raleway-Regular.ttf');
   font-weight: 400;
 }
 
@@ -53,6 +53,11 @@ $color-other: #33c7fd;
   background-color: $color-other;
   color: #fff;
   padding: 15px 49px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  &:hover {
+    box-shadow: none;
+  }
 }
 
 %visually-hidden {
@@ -85,7 +90,7 @@ body {
 
 .header {
   background: {
-    image: url("/../../src/img/sochi-2258855.png");
+    image: url("../../dist/img/sochi-2258855.png");
     repeat: no-repeat;
   }
 
@@ -196,14 +201,14 @@ body {
           position: absolute;
           width: 15px;
           height: 15px;
-          background-image: url("/../../src/img/Р.svg");
+          background-image: url("../../dist/img/Р.svg");
           background-repeat: no-repeat;
           top: 18px;
           left: -18px;
         }
 
         &:first-child::before {
-          background-image: url("/../../src/img/user.svg");
+          background-image: url("../../dist/img/user.svg");
           background-repeat: no-repeat;
         }
 
@@ -222,6 +227,10 @@ body {
           border-left: 4px solid transparent;
           border-top: 5px solid $color-main;
         }
+        
+        &:hover &::after {
+          border-top: 5px solid lighten($color: $color-main, $amount: 30);
+        }
 
         .linck-item-nav-menu {
           color: $color-main;
@@ -229,7 +238,6 @@ body {
           font-weight: 400;
           font-size: 14px;
           line-height: 48px;
-
           &:hover {
             text-decoration: none;
             color: lighten($color: $color-main, $amount: 30);
@@ -371,7 +379,7 @@ body {
       height: 5px;
       border: none;
       background-color: transparent;
-      background-image: url("/../../src/img/point.svg");
+      background-image: url("../../dist/img/point.svg");
       background-repeat: no-repeat;
     }
   }
@@ -385,19 +393,16 @@ body {
       margin-bottom: 20px;
       height: auto;
       align-self: flex-start;
-      
-      &:nth-child(3) {
-
-      }
+     
       &:nth-child(2) {
         .sticker {
-          background-image: url("/../../src/img/tag.red.png");
+          background-image: url("../../dist/img/tag.red.png");
         }
       }
 
       &:nth-child(3) {
         .sticker {
-          background-image: url("/../../src/img/tag.red.png");
+          background-image: url("../../dist/img/tag.red.png");
         }
       }
 
@@ -415,7 +420,7 @@ body {
         font-size: 14px;
         font-weight: 400;
         line-height: 24px;
-        background-image: url("/../../src/img/tag.png");
+        background-image: url("../../dist/img/tag.png");
         background-repeat: no-repeat;
       }
 
@@ -532,12 +537,12 @@ body {
             font-weight: 400;
             color: $color-other;
             text-decoration: none;
-            background-image: url("/../../src/img/linck-h4.svg");
+            background-image: url("../../dist/img/linck-h4.svg");
             background-position: 100% 50%;
             background-repeat: no-repeat;
             &:hover {
               color: darken($color: $color-other, $amount: 30);
-              background-image: url("/../../src/img/linck-h3.svg");
+              background-image: url("../../dist/img/linck-h3.svg");
             }
            }
         }
@@ -569,7 +574,7 @@ body {
     @extend %btn;
     border: none;
     margin-bottom: 62px;
-    background-image: url("/../../src/img/point.1.svg");
+    background-image: url("../../dist/img/point.1.svg");
     background-position: 85% 55%;
     background-repeat: no-repeat;
   }
@@ -668,19 +673,19 @@ body {
 
         &:nth-of-type(2) {
           .social-linck::before {
-            background-image: url("/../../src/img/ok.svg");
+            background-image: url("../../dist/img/ok.svg");
           }
         }
 
         &:nth-of-type(3) {
           .social-linck::before {
-            background-image: url("/../../src/img/yt.svg");
+            background-image: url("../../dist/img/yt.svg");
           }
         }
 
         &:nth-of-type(4) {
           .social-linck::before {
-            background-image: url("/../../src/img/insta.svg");
+            background-image: url("../../dist/img/insta.svg");
           }
         }
       }
@@ -695,7 +700,7 @@ body {
           height: 25px;
           background-color: $color-main;
           border-radius: 50%;
-          background-image: url("/../../src/img/vk.svg");
+          background-image: url("../../dist/img/vk.svg");
           background-position: 50% 50%;
           background-repeat: no-repeat;
         }
@@ -728,39 +733,85 @@ body {
   }
 }
 .popup {
-  display: flex;
-  width: 60%;
+  z-index: 3;
+  display: none;
+  align-items: flex-start;
+  width: 875px;
   flex-direction: row;
-  padding: 60px 40px;
-  position: fixed;
+  padding: 118px 50px 50px 87px;
+  position: absolute;
   left: 50%;
-  top: 10%;
+  top: 50%;
   transform: translateX(-50%);
   background-color: #fff;
+  @include lurge() {
+    width: 550px;
+    flex-wrap: wrap-reverse;
+    padding: 30px;
+  }
+  @include medium() {
+    width: 400px;
+    flex-wrap: wrap-reverse;
+    padding: 30px;
+    
+  }
+  @include small() {
+    width: 300px;
+    flex-wrap: wrap-reverse;
+    padding: 20px;
+    border-radius: 5px;
+    justify-content: center;
+  }
   .cart-foto {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
     flex-wrap: wrap;
-   width: 50%;
-   img{
-     
-
+    width: calc((100% - 30px)/2);
+    margin-right: 30px;
+   .photo-full {
+     width: 100%;
+     @include lurge() {
+      display: none;
+    }
    }
-  
+   .linck-foto {
+    @extend %margin-padding;
+     margin-top: 10px;
+     width: calc((100% - 30px)/4);
+     background-color: transparent;
+     border: none;
+     @include lurge() {
+      width: 100%;
+    }
+     img {
+       width: 100%;
+     }
+   }
+   @include lurge() {
+    width: 100%;
+    margin-bottom: 30px;
+  }
   }
   .cart-description {
-    width: 50%;
+    position: relative;
+    width: calc((100% - 30px)/2);
+    @include lurge() {
+      width: 100%;
+    }
     .duration-product {
       margin-bottom: 10px;
     }
     .product-title {
-      margin-top: 25px;
+      @extend %margin-padding;
       margin-bottom: 10px;
       padding-right: 20px;
       font-family: 'RobotoSlab', sans-serif;
       font-size: 18px;
       font-weight: 400;
       color: $color-other;
+      margin-bottom: 35px;
      }
      .cart-description-text {
        @extend %margin-padding;
@@ -783,10 +834,39 @@ body {
      }
      .btn {
        @extend %btn;
+       @include lurge() {
+        display: none;
+      }
      }
   }
   .close {
-
+   position: absolute;
+   top: -100px;
+   right: -30px;
+   @include lurge() {
+    top: -15px;
+   right: -10px;
   }
-  
+  }
+  .reserv-lurge {
+    display: none;
+    @extend %btn;
+    @include lurge() {
+      display: block;
+    }
+  }
 }
+.background-modul {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.show {
+  display: flex;
+}
+

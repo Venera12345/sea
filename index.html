@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./dist/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="./build/css/style.css">
   <title>Морские круизы</title>
 </head>
@@ -45,7 +45,7 @@
       </nav>
       <div class="bottom text-center">
         <a href="" class="logo">
-          <img src="src/img/logo.png" alt="logo" width="90" height="90" class="logo-pictur">
+          <img src="dist/img/logo.png" alt="logo" width="90" height="90" class="logo-pictur">
         </a>
         <h2 class="titel-logo">Морские прогулки</h2>
         <h1 class="titel-logo-strong">по чёрному морю</h1>
@@ -66,7 +66,7 @@
         <ul class="list-product list-unstyled row text-left">
           <li class="item-product col-md-6 col-sm-12">
             <span class="sticker">Хит продаж</span>
-            <div class="container-img"><img src="src/img/lighthouse-1319560.jpg" alt="Морской круиз в Анапу"
+            <div class="container-img"><img src="dist/img/lighthouse-1319560.jpg" alt="Морской круиз в Анапу"
                 class="produst-picture"></div>
             <div class="backround-cart">
               <h3 class="product-title"><a href="#">Морской круиз в Анапу</a></h3>
@@ -86,7 +86,7 @@
           </li>
           <li class="item-product col-md-6 col-sm-12">
             <span class="sticker">Акция</span>
-            <div class="container-img"><img src="src/img/sochi-2461968_1920.jpg"
+            <div class="container-img"><img src="dist/img/sochi-2461968_1920.jpg"
                 alt="Обзорная морская прогулка с экскурсией" class="produst-picture"></div>
             <div class="backround-cart">
               <h3 class="product-title"><a href="#">Обзорная морская прогулка с экскурсией</a></h3>
@@ -106,7 +106,7 @@
           </li>
           <li class="item-product col-md-6 col-sm-12">
             <span class="sticker">Скидка 10%</span>
-            <div class="container-img"><img src="src/img/sale.jpg" alt="Морская прогулка в Геленджик"
+            <div class="container-img"><img src="dist/img/sale.jpg" alt="Морская прогулка в Геленджик"
                 class="produst-picture"></div>
             <div class="backround-cart">
               <h3 class="product-title"><a href="#">Морская прогулка в Геленджик</a></h3>
@@ -126,7 +126,7 @@
           </li>
           <li class="item-product col-md-6 col-sm-12">
             <div class="container-img">
-              <img src="src/img/novorossiysk-211521_1920.jpg" alt="Морской круиз в Новороссийск"
+              <img src="dist/img/novorossiysk-211521_1920.jpg" alt="Морской круиз в Новороссийск"
                 class="produst-picture">
             </div>
             <div class="backround-cart">
@@ -147,7 +147,7 @@
           </li>
           <li class="item-product col-md-6 col-sm-12">
             <div class="container-img">
-              <img src="src/img/sea-3141781_1920.jpg" alt="Морская прогулка в Абрау-Дюрсо" class="produst-picture">
+              <img src="dist/img/sea-3141781_1920.jpg" alt="Морская прогулка в Абрау-Дюрсо" class="produst-picture">
             </div>
             <div class="backround-cart">
               <h3 class="product-title"> <a href="#">Морская прогулка в Абрау-Дюрсо</a></h3>
@@ -196,12 +196,13 @@
     </div>
   </footer>
   <section class="popup">
+    <button class="btn reserv-lurge">Бронирование</button>
     <div class="cart-foto">
-      <img src="" class="foto-full" alt="">
-      <button class="linck-foto"><img src="" alt=""></button>
-      <button class="linck-foto"><img src="" alt=""></button>
-      <button class="linck-foto"><img src="" alt=""></button>
-      <button class="linck-foto"><img src="" alt=""></button>
+      <img src="dist/img/popup-front.jpg" class="photo-full" alt="">
+      <button type="button" class="linck-foto"><img src="dist/img/popup-front.jpg" alt=""></button>
+      <button type="button" class="linck-foto"><img src="dist/img/novorossiysk-211521_1920.jpg" alt=""></button>
+      <button type="button" class="linck-foto"><img src="dist/img/sochi-2461968_1920.jpg" alt=""></button>
+      <button type="button" class="linck-foto"><img src="dist/img/lighthouse-1319560.jpg" alt=""></button>
     </div>
     <div class="cart-description">
       <h3 class="product-title">Морская прогулка в Абрау-Дюрсо</h3>
@@ -228,14 +229,17 @@
           <span class="sale-discount"></span>
         </p>
         <button class="btn reserv">Бронирование</button>
+        <button type="button" class="close">&times;</button>
     </div>
-    <span class="close"></span>
+   
   </section>
-  <script src="../dist/bootstrap/js/jquery-3.4.0.min.js"></script>
+  <div class="background-modul"></div>
+  <script src="./dist/bootstrap/js/jquery-3.4.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
   </script>
-  <script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+  <script src="./dist/bootstrap/js/bootstrap.min.js"></script>
+  <script src="./build/js/script.js"></script>
 </body>
 
 </html>
