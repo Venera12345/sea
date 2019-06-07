@@ -385,22 +385,42 @@ body {
   }
 
   .list-product {
-
+    position: relative;
     @extend %margin-padding;
+  
 
     .item-product {
       position: relative;
       margin-bottom: 20px;
-      height: auto;
       align-self: flex-start;
-     
+      height: auto;
+
       &:nth-child(2) {
+        .duration-product {
+          margin-bottom: 10px;
+          margin-top: 0px;
+        }
+        .product-sale {
+          margin-bottom: 10px;
+          margin-top: 0px;
+        }
         .sticker {
           background-image: url("../../dist/img/tag.red.png");
         }
       }
 
       &:nth-child(3) {
+        position: absolute;
+        left: 50%;
+        top: 310px;
+        .duration-product {
+          margin-bottom: 10px;
+          margin-top: 0px;
+        }
+        .product-sale {
+          margin-bottom: 10px;
+          margin-top: 0px;
+        }
         .sticker {
           background-image: url("../../dist/img/tag.red.png");
         }
@@ -486,7 +506,7 @@ body {
         @extend %margin-padding;
       }
 
-      @include lurge() {
+      @include extraLurge() {
         &:nth-child(2) {
           .container-img {
             height: auto;
@@ -563,13 +583,46 @@ body {
 
     }
 
-    @include lurge() {
+    @include extraLurge() {
+      .item-product {
+        &:nth-child(1) {
+          align-self: stretch;
+        }
+        
+        &:nth-child(2) {
+          .duration-product {
+            margin-bottom: 20px;
+            margin-top: 0px;
+          }
+          .product-sale {
+            margin-bottom: 20px;
+            margin-top: 0px;
+          }
+        }
+        &:nth-child(3) {
+          position: relative;
+          left: 0;
+          top: 0;
+          align-self: stretch;
+          .duration-product {
+            margin-bottom: 20px;
+          }
+          .product-sale {
+            margin-bottom: 20px;
+          }
+        }
+      }
       .item-product:last-child {
         display: none;
       }
     }
   }
-
+  @include lurge() {
+    .list-product {
+      margin-left: -70px;
+      margin-right: -70px;
+    }
+  }
   .catalog-btn {
     @extend %btn;
     border: none;
